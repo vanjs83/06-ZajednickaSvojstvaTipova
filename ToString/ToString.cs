@@ -17,9 +17,22 @@ namespace Vsite.CSharp
         public double Realni;
         public double Imaginarni;
 
-        // TODO: Implementirati metodu ToString tako da vraća niz u obliku: "2+3j"
+        //  Implementirati metodu ToString tako da vraća niz u obliku: "2+3j"
         // (ako je implementacija ispravna, metoda Main bi se trebala izvesti bez problema)
+        public override string ToString()
+        {
+            if (Realni !=0 && Imaginarni < 0)
+                return string.Format("{0}{1}j", Realni, Imaginarni);
+            if(Realni < 0 && Imaginarni==0)
+                return string.Format("{0}",Realni);
+           if (Realni == 0 && Imaginarni == 0)
+               return string.Format("{0}", 0);
+           if (Realni == 0 && Imaginarni != 0)
+               return string.Format("{0}j", Imaginarni);
 
+            return string.Format("{0}+{1}j", Realni, Imaginarni);
+            
+        }
 
     }
 
@@ -28,7 +41,7 @@ namespace Vsite.CSharp
         static void Main(string[] args)
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);
-            Debug.Assert(kb.ToString() == "2+3j");
+            Debug.Assert(kb.ToString() == "2+3j");//mora biti true inace baca iznimku
 
             kb.Imaginarni = -3;
             Debug.Assert(kb.ToString() == "2-3j");
