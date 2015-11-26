@@ -17,11 +17,15 @@ namespace Vsite.CSharp
 
         public override bool Equals(object obj)
         {
-            if (obj == null)
+            if (obj == null || obj is Osoba)
                 return false;
-            if (this.GetType() != obj.GetType())
+            
+            if (this.GetType()  != obj.GetType())
                 return false;
-            // TODO: implementirati metodu Equals tako da za osobe s istim imenom i matičnim brojem rezultat bude true
+            
+        
+                
+            //  implementirati metodu Equals tako da za osobe s istim imenom i matičnim brojem rezultat bude true
             // (ako je metoda dobro implementirana, metoda Main bi se trebala izvesti bez problema)
 
 
@@ -42,7 +46,7 @@ namespace Vsite.CSharp
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = new Osoba("Darko", 2);
             Debug.Assert(osobaA.Equals(osobaB) == false);
-
+            osobaA.Equals(3);
             // novi "Janko" s drugim matičnim brojem
             osobaB = new Osoba("Janko", 2);
             Debug.Assert(osobaA.Equals(osobaB) == false);
