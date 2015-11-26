@@ -19,10 +19,17 @@ namespace GetHashCode
 
         public override bool Equals(object obj)
         {
-            // TODO: Prekopirati implementaciju metode Equals iz EqualsRefTip1
-
-
-            return true;
+            //  Prekopirati implementaciju metode Equals iz EqualsRefTip1
+            if (obj == null) 
+                return false;
+            if (this.GetType() != obj.GetType()) 
+                return false;
+            Osoba drugi = (Osoba)obj;
+            if (Osoba.Equals(this.m_ime, drugi.m_ime) == false)
+                return false;
+            return m_matičniBroj.Equals(drugi.m_matičniBroj);
+               
+          
         }
 
         // TODO: Implementirati metodu GetHashCode tako da se metoda Main može izvesti bez problema
