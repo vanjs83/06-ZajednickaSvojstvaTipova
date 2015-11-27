@@ -16,9 +16,18 @@ namespace Vsite.CSharp
 
         public override bool Equals(object obj) 
         {
-            // TODO: prekopirati kod metode Equals iz zadatka EqualsRefTip1
+            //  prekopirati kod metode Equals iz zadatka EqualsRefTip1
+            if (obj == null)
+                return false;
+            if (this.GetType() != obj.GetType())
+                return false;
+            Osoba drugi = (Osoba)obj;
+            if (Osoba.Equals(this.m_ime, drugi.m_ime) == false)
+                return false;
+            return m_matičniBroj.Equals(drugi.m_matičniBroj);
 
-            return true;
+
+           // return true;
         }
 
         public override string ToString()
@@ -44,8 +53,19 @@ namespace Vsite.CSharp
                 return false;
             // TODO: dodati potrebne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini
             // (za ispravnu implementaciju bi metoda Main trebala proći bez problema)
+            if (obj == null)
+                return false;
+            if (this.GetType() != obj.GetType())
+                return false;
+            Student drugi = (Student)obj;
+            if (Student.Equals(this.m_smjer, drugi.m_smjer) == false)
+                return false;
+            return m_godina.Equals(drugi.m_godina);
+        
 
-            return true;  
+
+
+            //return true;  
         }
 
         public override string ToString()
