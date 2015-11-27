@@ -28,7 +28,18 @@ namespace Vsite.CSharp
         {
             // TODO: Implementirati tipski sigurnu usporedbu tako da metoda Main prođe bez problema
 
-            return true;
+            if (obj.m_ime==null || obj.m_matičniBroj==null)
+                return false;
+            if (this.GetType() != obj.GetType())
+                return false;
+            Osoba drugi = (Osoba)obj;
+            if (Osoba.Equals(this.m_ime, drugi.m_ime) == false)
+                return false;
+            return m_matičniBroj.Equals(drugi.m_matičniBroj);
+
+
+
+            //return true;
         }
 
         public override string ToString()
