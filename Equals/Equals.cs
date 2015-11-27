@@ -17,17 +17,16 @@ namespace Vsite.CSharp
             MojaKlasa mk1 = new MojaKlasa();
             MojaKlasa mk2 = null;
 
-            // TODO: Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
+            //  Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
             Console.WriteLine(mk1.Equals(mk2));
             Console.WriteLine(MojaKlasa.Equals(mk1,mk2));
     
 
-            // TODO: Usporediti objekte mk1 i mk2 pozivom metode mk1.Equals te ispisati rezultat
+            //  Usporediti objekte mk1 i mk2 pozivom metode mk1.Equals te ispisati rezultat
             Console.WriteLine(mk1.Equals(mk2));
 
-            // TODO: Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
-           // Console.WriteLine(MojaKlasa.Equals(mk1, mk2));
-            //   Console.WriteLine(mk2.Equals(mk1));
+            //  Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
+               //Console.WriteLine(mk2.Equals(mk1)); ne može se izvršit
             //  Storiti dvije strukture ms1 i ms2 na isti način kao i za gornje instance klasa mk1 i mk2
             MojaStruktura ms1 = new MojaStruktura();
             MojaStruktura ms2 = ms1;
