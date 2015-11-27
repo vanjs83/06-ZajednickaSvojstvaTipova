@@ -34,13 +34,13 @@ namespace Vsite.CSharp
             //  Usporediti objekte ms1 i ms2 korištenjem statičke metode MojaStruktura.Equals te ispisati rezultat
             Console.WriteLine(MojaStruktura.Equals(ms1, ms2));
 
-            // TODO: Usporediti objekte ms1 i ms2 pozivom metode ms1.Equals te ispisati rezultat
+            //  Usporediti objekte ms1 i ms2 pozivom metode ms1.Equals te ispisati rezultat
             Console.WriteLine(ms2.Equals( ms1));
 
-            // TODO: Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
+            //  Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
             Console.WriteLine(ms1.Equals(ms2));
 
-            // TODO: Ispis prekopirati u datoteku Equals.txt pridruženu ovom projektu te obrazložite svaki rezultat
+            //  Ispis prekopirati u datoteku Equals.txt pridruženu ovom projektu te obrazložite svaki rezultat
 
             Console.ReadKey();
         }
