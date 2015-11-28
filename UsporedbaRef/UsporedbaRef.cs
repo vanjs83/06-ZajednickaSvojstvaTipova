@@ -16,17 +16,34 @@ namespace Vsite.CSharp
 
         public override bool Equals(object obj) 
         {
-            // TODO: Preslikati implementaciju metode iz EqualsRefTip1
+            //  Preslikati implementaciju metode iz EqualsRefTip1
+            Osoba drugi = (Osoba)obj;
+            if (Osoba.Equals(this.m_ime, drugi.m_ime) == false)
+                return false;
+            return m_matičniBroj.Equals(drugi.m_matičniBroj);
 
-            return true;
+
+            if (obj == null || obj is Osoba)
+                return false;
+
+            if (this.GetType() != obj.GetType())
+                return false;
+          
+
+
+
+            //return true;
         }
 
-        // TODO: implementirati operatore == i != tako da se metoda Main izvede bez problema
-
+        //  TODO: implementirati operatore == i != tako da se metoda Main izvede bez problema
+        public static bool operator ==(Osoba rt1, Osoba rt2)
+        {
+            return false;
+        }
 
         // POGREŠNA IMPLEMENTACIJA (beskonačna rekurzija)
-        /*
-        public static bool operator ==(Osoba rt1, Osoba rt2)
+        
+        /*public static bool operator ==(Osoba rt1, Osoba rt2)
         {
             if (rt1 == rt2) 
                 return true; 
@@ -35,8 +52,8 @@ namespace Vsite.CSharp
             // ...
             return true;
         }
-        */
         
+        */
         public override string ToString()
         {
             return string.Format("'{0}, {1}'", m_ime, m_matičniBroj);
