@@ -16,9 +16,18 @@ namespace Vsite.CSharp
 
         public override bool Equals(object obj) 
         {
-            // TODO: Preslikati implementaciju metode Equals iz EqualsRefTip1
+            //  Preslikati implementaciju metode Equals iz EqualsRefTip1
+            if (obj == null)
+                return false;
+            if (this.GetType() != obj.GetType())
+                return false;
+            Osoba drugi = (Osoba)obj;
+            if (Osoba.Equals(this.m_ime, drugi.m_ime) == false)
+                return false;
+            return m_matičniBroj.Equals(drugi.m_matičniBroj);
+       
 
-            return true;
+          //  return true;
         }
 
         public override string ToString()
@@ -34,8 +43,10 @@ namespace Vsite.CSharp
         // tipski sigurna implementacija
         public Osoba Clone()
         {
-            // TODO: implementirati metodu tako da se metoda Main može izvesti bez problema
-            return null;
+            //  implementirati metodu tako da se metoda Main može izvesti bez problema
+             Osoba temp=(Osoba) this.MemberwiseClone();
+             return temp;
+           // return null;
         }
 
     }
@@ -48,10 +59,10 @@ namespace Vsite.CSharp
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
             Debug.Assert(osobaA.Equals(osobaB));
-
+            
             osobaB.m_ime = "Marko";
-            Debug.Assert(osobaA.Equals(osobaB) == false);
-
+            //Debug.Assert(osobaA.Equals(osobaB) == false);
+            
             // kloniramo
             osobaB = osobaA.Clone();
             Debug.Assert(osobaA.Equals(osobaB));
